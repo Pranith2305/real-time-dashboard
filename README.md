@@ -1,46 +1,37 @@
-﻿# real-time-dashboard
-src/
-├── components/
-│   ├── common/
-│   │   ├── Button/
-│   │   │   ├── Button.tsx
-│   │   │   └── Button.module.css (optional)
-│   │   ├── Modal/
-│   │   │   ├── Modal.tsx
-│   │   │   └── Modal.module.css
-│   │   └── ... (more common components)
-│   ├── layout/
-│   │   ├── Header.tsx
+project-root/
+├── public/
+│   └── assets/           # Static assets like images, icons, etc.
+├── src/
+│   ├── app/
+│   │   ├── api/          # API routes for fetching data or server-side logic
+│   │   ├── dashboard/    # Main route for the dashboard
+│   │   │   ├── kanban/   # Kanban board page
+│   │   │   │   ├── page.tsx  # Kanban main page
+│   │   │   │   └── BoardColumn.tsx  # Column component for Kanban
+│   │   │   ├── layout.tsx # Dashboard layout file
+│   │   │   └── page.tsx   # Dashboard main page
+│   │   ├── login/        # Login route
+│   │   │   └── page.tsx   # Login page
+│   │   ├── settings/     # User settings page
+│   │   │   └── page.tsx   # Settings main page
+│   │   └── layout.tsx    # Global app layout
+│   ├── components/       # Shared components
+│   │   ├── Navbar.tsx
 │   │   ├── Sidebar.tsx
-│   │   └── Footer.tsx
-│   └── dashboard/
-│       ├── TaskList.tsx
-│       ├── ChatBox.tsx
-│       └── ... (more dashboard-specific components)
-├── hooks/
-│   ├── useAuth.ts
-│   ├── useSocket.ts
-│   └── ... (custom hooks)
-├── pages/ (for Next.js)
-│   ├── index.tsx
-│   ├── login.tsx
-│   ├── dashboard/
-│   │   └── index.tsx
-│   └── ... (other pages)
-├── context/
-│   ├── AuthContext.tsx
-│   ├── SocketContext.tsx
-│   └── ... (other contexts)
-├── services/
-│   ├── apiClient.ts
-│   ├── authService.ts
-│   └── ... (API calls)
-├── utils/
-│   ├── constants.ts
-│   ├── helpers.ts
-│   └── ... (utility functions)
-├── styles/
-│   ├── globals.css
-│   ├── tailwind.css (if using Tailwind CSS)
-│   └── ... (other styles)
-└── App.tsx (or App.js for non-TypeScript users)
+│   │   ├── Card.tsx      # Example ShadCN UI card component
+│   │   ├── Button.tsx    # Example ShadCN UI button component
+│   │   ├── Modal.tsx     # Modal component using ShadCN styling
+│   │   ├── TaskCard.tsx  # Task card for Kanban board
+│   │   └── KanbanBoard.tsx # Kanban board wrapper component
+│   ├── hooks/            # Custom hooks
+│   │   └── useAuth.tsx   # Hook for authentication
+│   ├── lib/              # Utility functions and third-party integrations
+│   │   └── fetcher.ts    # API fetching utility
+│   ├── providers/        # Context providers for state management
+│   │   └── AuthProvider.tsx
+│   ├── styles/           # Global styles, including ShadCN styles
+│   │   ├── globals.css
+│   │   └── shadcn.config.ts
+│   ├── pages/            # Default Next.js pages directory (optional)
+│   └── utils/            # Utility/helper functions
+└── tsconfig.json         # TypeScript config
